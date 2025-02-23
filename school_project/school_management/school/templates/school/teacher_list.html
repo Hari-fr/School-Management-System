@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Teachers</h1>
+<div class="teacher-list">
+    {% for teacher in teachers %}
+    <div class="teacher-card">
+        <h2><a href="{% url 'teacher-detail' teacher.pk %}">{{ teacher.first_name }} {{ teacher.last_name }}</a></h2>
+        <p>Subject: {{ teacher.subject }}</p>
+        <p>Email: {{ teacher.email }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome to School Management System</h1>
+<div class="home-content">
+    <p>Welcome to our school management system. Here you can manage teachers and students.</p>
+    
+    <div class="quick-links">
+        <h2>Quick Links:</h2>
+        <ul>
+            <li><a href="{% url 'teacher-list' %}">View all teachers</a></li>
+            <li><a href="{% url 'student-list' %}">View all students</a></li>
+            <li><a href="{% url 'admin:index' %}">Admin interface</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

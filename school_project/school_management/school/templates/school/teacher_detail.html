@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="teacher-detail">
+    <h1>{{ teacher.first_name }} {{ teacher.last_name }}</h1>
+    <p>Subject: {{ teacher.subject }}</p>
+    <p>Email: {{ teacher.email }}</p>
+    <p>Hire Date: {{ teacher.hire_date }}</p>
+    
+    <h2>Assigned Students</h2>
+    <ul class="student-list">
+        {% for student in teacher.students.all %}
+        <li><a href="{% url 'student-detail' student.pk %}">{{ student.first_name }} {{ student.last_name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
